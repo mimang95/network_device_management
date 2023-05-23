@@ -79,7 +79,6 @@
         INNER JOIN vlan 
         ON network_device.network_address = vlan.network_address;";
         $data = $table->connect()->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        //$vlan_data = $table->connect()->query('SELECT * FROM vlan')->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($data)){
             echo "<table>";
             echo "<tr><th>Device ID</th><th>Device Type</th>";
