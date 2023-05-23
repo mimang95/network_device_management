@@ -4,16 +4,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filename = $_POST['filename'];
 
     require '../classes/csv-reader.classes.php';
-    $csvReader = new CSVReader($filename);
+    require '../classes/dbh.classes.php';
 
+    $csvReader = new CSVReader($filename);
     $data = $csvReader->read();
 
-    if ($data !== false) {
-        foreach ($data as $row) {
-            echo implode(', ', $row) . "<br>";
+    if ($data !== false) 
+        {
+            $dbh = new Dbh();
+            $dbh->saveCSVToDatabase($data);
+            header("location: ../index.php");
+            exit();
         }
-    } else {
-        echo "Fehler beim Einlesen der CSV-Datei.";
-    }
+    else 
+        {
+            echo "Fehler beim Einlesen der CSV-Datei.";
+        }
 }
 ?>

@@ -23,7 +23,6 @@ class CSVReader {
             
             fclose($handle);
         }
-        
         return $rows;
     }
 }

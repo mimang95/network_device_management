@@ -1,4 +1,3 @@
-Name,Alter,Stadt
-John,25,New York
-Jane,30,San Francisco
-Mike,40,Chicago
+Peter,25,New York,test_network
+Jane,30,San Francisco,test_network
+Heinz,40,Chicago,test_network
