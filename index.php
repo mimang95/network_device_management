@@ -99,5 +99,10 @@
         }
         ?>
     </table>
+    <form action="./includes/process.inc.php" method="post">
+        <label for="filename">Dateiname:</label>
+        <input type="text" name="filename" id="filename" required>
+        <button type="submit">CSV-Datei einlesen</button>
+    </form>
 </body>
 </html>
