@@ -104,5 +104,8 @@
         <input type="text" name="filename" id="filename" required>
         <button type="submit">CSV-Datei einlesen</button>
     </form>
+    <form action="./includes/export.inc.php" method="post">
+        <button type="submit" name="export">CSV-Export</button>
+    </form>
 </body>
 </html>
