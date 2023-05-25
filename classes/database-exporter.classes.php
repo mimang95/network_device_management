@@ -29,8 +29,8 @@ class DatabaseExporter extends Dbh
             }
 
             fclose($file);
-
-            echo 'Daten wurden erfolgreich exportiert.';
+            header("location: ../index.php");
+            exit();
         } catch (PDOException $e) {
             die('Fehler beim Exportieren der Daten: ' . $e->getMessage());
         }

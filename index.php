@@ -100,11 +100,13 @@
         ?>
     </table>
     <form action="./includes/process.inc.php" method="post">
-        <label for="filename">Dateiname:</label>
+        <label for="filename">Import-Filename:</label>
         <input type="text" name="filename" id="filename" required>
         <button type="submit">CSV-Datei einlesen</button>
     </form>
     <form action="./includes/export.inc.php" method="post">
+        <label for="exp_file">Export-Filename:</label>
+        <input type="text" name="exp_file">
         <button type="submit" name="export">CSV-Export</button>
     </form>
 </body>
