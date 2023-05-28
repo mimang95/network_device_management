@@ -2,17 +2,20 @@
     session_start();
     include('classes/dbh.classes.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Network Device Management</span>
             <ul>
                 <?php
                     if(isset($_SESSION["useruid"]))
@@ -70,7 +73,6 @@
     <?php    
         }       
     ?>
-    <table>
         <?php
         $table = new Dbh();
         $query = 
@@ -80,20 +82,21 @@
         ON network_device.network_address = vlan.network_address;";
         $data = $table->connect()->query($query)->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($data)){
-            echo "<table>";
-            echo "<tr><th>Device ID</th><th>Device Type</th>";
+            echo "<table class='table table-hover table-striped table-bordered'>";
+            echo "<thead><tr><th scope='col'>Device ID</th><th scope='col'>Device Type</th>";
             
             if(isset($_SESSION["useruid"]))
             {
-                echo "<th>IP-Address</th><th>MAC-Address</th><th>Network-Address</th><th>Subnetmask</th><th>Default Gateway</th>";
+                echo "<th scope='col'>IP-Address</th><th scope='col'>MAC-Address</th><th scope='col'>Network-Address</th><th scope='col'>Subnetmask</th><th scope='col'>Default Gateway</th>";
             }
-            echo "</tr>";
+            echo "</tr></thead>";
+            echo "<tbody>";
                 foreach ($data as $row) {
                 echo "<tr><td>".$row["device_id"]."</td><td>".$row["device_type"]."</td>";
                 if(isset($_SESSION["useruid"]))
                 {echo "<td>".$row["ip_address"]."</td><td>".$row["MAC_address"]."</td><td>".$row["network_address"]."</td><td>".$row["subnet_mask"]."</td><td>". $row["default_gateway"]."</td>";}
             }
-            echo "</tr></table>";
+            echo "</tr></tbody></table>";
         } else {
             echo "Keine Daten gefunden.";
         }
@@ -109,5 +112,6 @@
         <input type="text" name="exp_file">
         <button type="submit" name="export">CSV-Export</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
