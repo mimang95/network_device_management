@@ -10,13 +10,13 @@ class CSVReader {
     }
     
     public function read() {
-        if (!file_exists("../".$this->filename) || !is_readable("../".$this->filename)) {
+        if (!file_exists("../csv-files/".$this->filename) || !is_readable("../csv-files/".$this->filename)) {
             return false;
         }
         
         $rows = [];
         
-        if (($handle = fopen("../".$this->filename, 'r')) !== false) {
+        if (($handle = fopen("../csv-files/".$this->filename, 'r')) !== false) {
             while (($data = fgetcsv($handle, 0, $this->delimiter)) !== false) {
                 $rows[] = $data;
             }

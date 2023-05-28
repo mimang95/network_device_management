@@ -5,7 +5,7 @@ $exporter = new DatabaseExporter();
 $exporter->connect();
 
 if (isset($_POST['export'])) {
-    $csvFile = $_POST['exp_file'];
+    $csvFile = "../csv-files/" . $_POST['exp_file'];
 
     $exporter->exportToCSV($csvFile);
 }

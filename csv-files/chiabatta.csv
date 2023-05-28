@@ -1,0 +1,5 @@
+device_id,device_type,ip_address,MAC_address,network_address,subnet_mask,default_gateway
+1,notebook,test_ip,test_mac,test_network,test_subnet,test_gateway
+41,Heiner,35,"New Orleans",test_network,test_subnet,test_gateway
+42,Janusch,15,Bielefeld,test_network,test_subnet,test_gateway
+43,Heiner,35,"New Orleans",test_network,test_subnet,test_gateway

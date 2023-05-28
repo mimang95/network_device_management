@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm bg-body-tertiary">
             <span class="navbar-brand mb-0 h1">Network Device Management</span>
             <ul>
                 <?php
@@ -38,18 +38,18 @@
     </header>
     <section class="index-login">
         <form action="includes/signup.inc.php" method="post">
-            <input type="text" name="uid" placeholder="Username">
-            <input type="password" name="pwd" placeholder="Password">
-            <input type="password" name="pwdRepeat" placeholder="Repeat Password">
-            <input type="text" name="email" placeholder="E-Mail">
+            <input class="form-control" type="text" name="uid" placeholder="Username">
+            <input class="form-control" type="password" name="pwd" placeholder="Password">
+            <input class="form-control" type="password" name="pwdRepeat" placeholder="Repeat Password">
+            <input class="form-control" type="text" name="email" placeholder="E-Mail">
             <br>
-            <button type="submit" name="submit">SIGN UP</button>
+            <button class="btn btn-primary" type="submit" name="submit">SIGN UP</button>
         </form>
         <form action="includes/login.inc.php" method="post">
-            <input type="text" name="uid" placeholder="Username">
-            <input type="password" name="pwd" placeholder="Password">
+            <input class="form-control" type="text" name="uid" placeholder="Username">
+            <input class="form-control" type="password" name="pwd" placeholder="Password">
             <br>
-            <button type="submit" name="submit">LOGIN</button>
+            <button class="btn btn-primary" type="submit" name="submit">LOGIN</button>
         </form>
     </section>
     <?php
@@ -65,10 +65,10 @@
             <option value="iot_device">IoT-Device</option>
             <option value="printer">Printer</option>
         </select><br>
-        <input type="text" name="ip_address" placeholder="ip-address"><br>
-        <input type="text" name="mac_address" placeholder="mac-Address"><br>
-        <input type="text" name="network_address" placeholder="Network-Address"><br>
-        <button type="submit" name="submit">SUBMIT</button><br>
+        <input class="form-control" type="text" name="ip_address" placeholder="ip-address"><br>
+        <input class="form-control" type="text" name="mac_address" placeholder="mac-Address"><br>
+        <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
+        <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
     </form>
     <?php    
         }       
@@ -104,13 +104,24 @@
     </table>
     <form action="./includes/process.inc.php" method="post">
         <label for="filename">Import-Filename:</label>
-        <input type="text" name="filename" id="filename" required>
-        <button type="submit">CSV-Datei einlesen</button>
+        <input class="form-control" type="text" name="filename" id="filename" required>
+        <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
     </form>
+
     <form action="./includes/export.inc.php" method="post">
         <label for="exp_file">Export-Filename:</label>
-        <input type="text" name="exp_file">
-        <button type="submit" name="export">CSV-Export</button>
+        <input class="form-control" type="text" name="exp_file">
+        <?php
+        if(isset($_SESSION["useruid"]))
+            {
+        ?>
+        <button class="btn btn-primary" type="submit" name="export">CSV-Export</button>
+        <button class="btn btn-primary" type="submit" name="export">JSON-Export</button>
+        <button class="btn btn-primary" type="submit" name="export">XML-Export</button>
+        <?php    
+        }
+        ?>
+            
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
