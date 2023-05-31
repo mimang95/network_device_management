@@ -108,17 +108,40 @@
         <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
     </form>
 
-    <form action="./includes/export.inc.php" method="post">
+    <form action="./includes/export-csv.inc.php" method="post">
         <label for="exp_file">Export-Filename:</label>
         <input class="form-control" type="text" name="exp_file">
         <?php
         if(isset($_SESSION["useruid"]))
             {
         ?>
-        <button class="btn btn-primary" type="submit" name="export">CSV-Export</button>
-        <button class="btn btn-primary" type="submit" name="export">JSON-Export</button>
-        <button class="btn btn-primary" type="submit" name="export">XML-Export</button>
+        <button class="btn btn-primary" type="submit" name="export-csv">CSV-Export</button>
         <?php    
+        }
+        ?>
+            
+    </form>
+    <form action="./includes/export-json.inc.php" method="post">
+        <label for="exp_file">Export-Filename:</label>
+        <input class="form-control" type="text" name="exp_file">
+        <?php
+        if(isset($_SESSION["useruid"]))
+            {
+        ?>
+        <button class="btn btn-primary" type="submit" name="export-json">JSON-Export</button>
+        <?php    
+        }
+        ?>
+    </form>
+    <form action="./includes/export-xml.inc.php" method="post">
+        <label for="exp_file">Export-Filename:</label>
+        <input class="form-control" type="text" name="exp_file">
+        <?php
+        if(isset($_SESSION["useruid"]))
+            {
+        ?>
+        <button class="btn btn-primary" type="submit" name="export-xml">XML-Export</button>
+        <?php
         }
         ?>
             
