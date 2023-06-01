@@ -53,10 +53,11 @@
         </form>
     </section>
     <?php
-                    if(isset($_SESSION["useruid"]))
-                    {
-                ?>
-    <form action="includes/submit.inc.php" method="post">
+        if(isset($_SESSION["useruid"]))
+        {
+    ?>
+    <h3>Add network device</h3><br>
+    <form action="includes/submit-network-device.inc.php" method="post">
         <select name="device_type" id="device_type">
             <option value="notebook">Notebook</option>
             <option value="PC">PC</option>
@@ -70,7 +71,14 @@
         <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
         <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
     </form>
-    <?php    
+    <h3>Add VLAN</h3><br>
+    <form action="includes/submit-vlan.inc.php" method="post">
+        <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
+        <input class="form-control" type="text" name="subnet_mask" placeholder="Subnetmask"><br>
+        <input class="form-control" type="text" name="default_gateway" placeholder="Default-Gateway"><br>
+        <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
+    </form>
+    <?php
         }       
     ?>
         <?php

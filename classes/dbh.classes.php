@@ -19,7 +19,14 @@ class Dbh {
         $stmt->bindParam(':ip_address', $ip_address);
         $stmt->bindParam(':mac_address', $mac_address);
         $stmt->bindParam(':network_address', $network_address);
-        //$stmt->bindParam("ssss", $device_type, $ip_address, $mac_address, $network_address);
+        $stmt->execute();
+    }
+
+    public function insertVlan($network_address, $subnet_mask, $default_gateway){
+        $stmt = $this->connect()->prepare("INSERT INTO vlan (network_address, subnet_mask, default_gateway) VALUES(:network_address, :subnet_mask, :default_gateway)");
+        $stmt->bindParam(':network_address', $network_address);
+        $stmt->bindParam(':subnet_mask', $subnet_mask);
+        $stmt->bindParam(':default_gateway', $default_gateway);
         $stmt->execute();
     }
 

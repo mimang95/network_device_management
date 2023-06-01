@@ -1,12 +1,11 @@
 <?php
 include('../classes/dbh.classes.php');
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $device_type = $_POST['device_type'];
-        $ip_address = $_POST['ip_address'];
-        $mac_address = $_POST['mac_address'];
         $network_address = $_POST['network_address'];
+        $subnet_mask = $_POST['subnet_mask']; 
+        $default_gateway = $_POST['default_gateway'];
         $dbh = new Dbh();
-        $dbh->insertDevice($device_type, $ip_address, $mac_address, $network_address);
+        $dbh->insertVlan($network_address, $subnet_mask, $default_gateway);
         header("location: ../index.php?error=none");
     }
-    ?>
+?>
