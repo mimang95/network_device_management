@@ -65,8 +65,8 @@
             <option value="iot_device">IoT-Device</option>
             <option value="printer">Printer</option>
         </select><br>
-        <input class="form-control" type="text" name="ip_address" placeholder="ip-address"><br>
-        <input class="form-control" type="text" name="mac_address" placeholder="mac-Address"><br>
+        <input class="form-control" type="text" name="ip_address" placeholder="IP-Address"><br>
+        <input class="form-control" type="text" name="mac_address" placeholder="MAC-Address"><br>
         <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
         <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
     </form>
@@ -146,6 +146,18 @@
         ?>
             
     </form>
+    <?php
+    if(isset($_SESSION["useruid"]))
+            {
+        ?>
+    <form action="./includes/delete_record.inc.php" method="post">
+        <label for="device_id">Delete Network Device:</label>
+        <input class="form-control" type="text" name="device_id">
+        <button class="btn btn-primary" type="submit" name="submit">Delete Network Device</button>
+    </form>
+    <?php
+        }
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

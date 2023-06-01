@@ -22,6 +22,14 @@ class Dbh {
         //$stmt->bindParam("ssss", $device_type, $ip_address, $mac_address, $network_address);
         $stmt->execute();
     }
+
+    public function deleteNetworkDevice($device_id){
+        $stmt = $this->connect()->prepare("DELETE FROM network_device WHERE device_id = :device_id");
+        $stmt->bindParam(':device_id', $device_id);
+
+        $stmt->execute();
+    }
+
     public function saveCSVToDatabase($data) {
         $this->connect();
         
