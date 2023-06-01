@@ -107,49 +107,27 @@
         <input class="form-control" type="text" name="filename" id="filename" required>
         <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
     </form>
-
-    <form action="./includes/export-csv.inc.php" method="post">
-        <label for="exp_file">Export-Filename:</label>
-        <input class="form-control" type="text" name="exp_file">
-        <?php
+    <?php
         if(isset($_SESSION["useruid"]))
             {
         ?>
+    <form action="./includes/export-csv.inc.php" method="post">
+        <label for="exp_file">Export-Filename:</label>
+        <input class="form-control" type="text" name="exp_file">
+        
         <button class="btn btn-primary" type="submit" name="export-csv">CSV-Export</button>
-        <?php    
-        }
-        ?>
             
     </form>
     <form action="./includes/export-json.inc.php" method="post">
         <label for="exp_file">Export-Filename:</label>
         <input class="form-control" type="text" name="exp_file">
-        <?php
-        if(isset($_SESSION["useruid"]))
-            {
-        ?>
         <button class="btn btn-primary" type="submit" name="export-json">JSON-Export</button>
-        <?php    
-        }
-        ?>
     </form>
     <form action="./includes/export-xml.inc.php" method="post">
         <label for="exp_file">Export-Filename:</label>
         <input class="form-control" type="text" name="exp_file">
-        <?php
-        if(isset($_SESSION["useruid"]))
-            {
-        ?>
-        <button class="btn btn-primary" type="submit" name="export-xml">XML-Export</button>
-        <?php
-        }
-        ?>
-            
+        <button class="btn btn-primary" type="submit" name="export-xml">XML-Export</button>    
     </form>
-    <?php
-    if(isset($_SESSION["useruid"]))
-            {
-        ?>
     <form action="./includes/delete_record.inc.php" method="post">
         <label for="device_id">Delete Network Device:</label>
         <input class="form-control" type="text" name="device_id">
