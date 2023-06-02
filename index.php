@@ -71,32 +71,62 @@
     ?>
     <div class="row">
     <div class="col-6">
-    <h3>Add network device</h3>
-    <form action="includes/submit-network-device.inc.php" method="post">
-        <select class="form-select" name="device_type" id="device_type">
-            <option value="notebook">Notebook</option>
-            <option value="PC">PC</option>
-            <option value="router">Router</option>
-            <option value="switch">Switch</option>
-            <option value="iot_device">IoT-Device</option>
-            <option value="printer">Printer</option>
-        </select><br>
-        <input class="form-control" type="text" name="ip_address" placeholder="IP-Address"><br>
-        <input class="form-control" type="text" name="mac_address" placeholder="MAC-Address"><br>
-        <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
-        <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
-    </form>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Add network device</h3>
+                <form action="includes/submit-network-device.inc.php" method="post">
+                    <div class="mb-3">
+                        <label for="device_type" class="form-label">Device Type</label>
+                        <select class="form-select" name="device_type" id="device_type">
+                            <option value="notebook">Notebook</option>
+                            <option value="PC">PC</option>
+                            <option value="router">Router</option>
+                            <option value="switch">Switch</option>
+                            <option value="iot_device">IoT-Device</option>
+                            <option value="printer">Printer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ip_address" class="form-label">IP Address</label>
+                        <input class="form-control" type="text" name="ip_address" placeholder="IP Address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mac_address" class="form-label">MAC Address</label>
+                        <input class="form-control" type="text" name="mac_address" placeholder="MAC Address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="network_address" class="form-label">Network Address</label>
+                        <input class="form-control" type="text" name="network_address" placeholder="Network Address">
+                    </div>
+                    <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-6">
-    <h3>Add VLAN</h3>
-    <form action="includes/submit-vlan.inc.php" method="post">
-        <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
-        <input class="form-control" type="text" name="subnet_mask" placeholder="Subnetmask"><br>
-        <input class="form-control" type="text" name="default_gateway" placeholder="Default-Gateway"><br>
-        <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
-    </form>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Add VLAN</h3>
+                <form action="includes/submit-vlan.inc.php" method="post">
+                    <div class="mb-3">
+                        <label for="network_address" class="form-label">Network Address</label>
+                        <input class="form-control" type="text" name="network_address" placeholder="Network Address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subnet_mask" class="form-label">Subnet Mask</label>
+                        <input class="form-control" type="text" name="subnet_mask" placeholder="Subnet Mask">
+                    </div>
+                    <div class="mb-3">
+                        <label for="default_gateway" class="form-label">Default Gateway</label>
+                        <input class="form-control" type="text" name="default_gateway" placeholder="Default Gateway">
+                    </div>
+                    <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
     </div>
-    </div>
+</div>
+<br>
     <?php
         }       
     ?>
