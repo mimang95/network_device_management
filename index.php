@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -36,29 +37,37 @@
             </ul>
         </nav>
     </header>
-    <section class="index-login">
+    <div class="card">
+    <div class="row">
+    <div class="col-6">
+    <h3 class="card-title">Sign Up</h3>
         <form action="includes/signup.inc.php" method="post">
             <input class="form-control" type="text" name="uid" placeholder="Username">
             <input class="form-control" type="password" name="pwd" placeholder="Password">
             <input class="form-control" type="password" name="pwdRepeat" placeholder="Repeat Password">
             <input class="form-control" type="text" name="email" placeholder="E-Mail">
-            <br>
             <button class="btn btn-primary" type="submit" name="submit">SIGN UP</button>
         </form>
+        </div>
+        <div class="col-6">
+        <h3 class="card-title">Login</h3>
         <form action="includes/login.inc.php" method="post">
             <input class="form-control" type="text" name="uid" placeholder="Username">
             <input class="form-control" type="password" name="pwd" placeholder="Password">
-            <br>
             <button class="btn btn-primary" type="submit" name="submit">LOGIN</button>
         </form>
-    </section>
+        </div>
+        </div>
+    </div><br>
     <?php
         if(isset($_SESSION["useruid"]))
         {
     ?>
-    <h3>Add network device</h3><br>
+    <div class="row">
+    <div class="col-6">
+    <h3>Add network device</h3>
     <form action="includes/submit-network-device.inc.php" method="post">
-        <select name="device_type" id="device_type">
+        <select class="form-select" name="device_type" id="device_type">
             <option value="notebook">Notebook</option>
             <option value="PC">PC</option>
             <option value="router">Router</option>
@@ -71,13 +80,17 @@
         <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
         <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
     </form>
-    <h3>Add VLAN</h3><br>
+    </div>
+    <div class="col-6">
+    <h3>Add VLAN</h3>
     <form action="includes/submit-vlan.inc.php" method="post">
         <input class="form-control" type="text" name="network_address" placeholder="Network-Address"><br>
         <input class="form-control" type="text" name="subnet_mask" placeholder="Subnetmask"><br>
         <input class="form-control" type="text" name="default_gateway" placeholder="Default-Gateway"><br>
         <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button><br>
     </form>
+    </div>
+    </div>
     <?php
         }       
     ?>
