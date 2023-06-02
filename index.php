@@ -37,28 +37,34 @@
             </ul>
         </nav>
     </header>
-    <div class="card">
     <div class="row">
-    <div class="col-6">
-    <h3 class="card-title">Sign Up</h3>
-        <form action="includes/signup.inc.php" method="post">
-            <input class="form-control" type="text" name="uid" placeholder="Username">
-            <input class="form-control" type="password" name="pwd" placeholder="Password">
-            <input class="form-control" type="password" name="pwdRepeat" placeholder="Repeat Password">
-            <input class="form-control" type="text" name="email" placeholder="E-Mail">
-            <button class="btn btn-primary" type="submit" name="submit">SIGN UP</button>
-        </form>
+    <div class="col-md-6">
+        <div class="card text-center">
+            <h3 class="card-title">Sign Up</h3>
+            <form action="includes/signup.inc.php" method="post">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <input class="form-control mb-2 card-input" type="text" name="uid" placeholder="Username">
+                    <input class="form-control mb-2 card-input" type="password" name="pwd" placeholder="Password">
+                    <input class="form-control mb-2 card-input" type="password" name="pwdRepeat" placeholder="Repeat Password">
+                    <input class="form-control mb-2 card-input" type="text" name="email" placeholder="E-Mail">
+                    <button class="btn btn-primary" type="submit" name="submit">SIGN UP</button>
+                </div>
+            </form>
         </div>
-        <div class="col-6">
-        <h3 class="card-title">Login</h3>
-        <form action="includes/login.inc.php" method="post">
-            <input class="form-control" type="text" name="uid" placeholder="Username">
-            <input class="form-control" type="password" name="pwd" placeholder="Password">
-            <button class="btn btn-primary" type="submit" name="submit">LOGIN</button>
-        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-center">
+            <h3 class="card-title">Login</h3>
+            <form action="includes/login.inc.php" method="post">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <input class="form-control mb-2 card-input" type="text" name="uid" placeholder="Username">
+                    <input class="form-control mb-2 card-input" type="password" name="pwd" placeholder="Password">
+                    <button class="btn btn-primary" type="submit" name="submit">LOGIN</button>
+                </div>
+            </form>
         </div>
-        </div>
-    </div><br>
+    </div>
+</div><br>
     <?php
         if(isset($_SESSION["useruid"]))
         {
