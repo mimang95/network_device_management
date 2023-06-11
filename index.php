@@ -159,37 +159,54 @@
         }
         ?>
     </table>
+    <div class="card">
+  <div class="card-body">
     <form action="./includes/process.inc.php" method="post">
-        <label for="filename">Import-Filename:</label>
+      <div class="form-group">
+      <h5 class="text-center">Import-Filename:</h5>
         <input class="form-control" type="text" name="filename" id="filename" required>
+      </div>
+
+      <div class="text-center">
         <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
+      </div>
     </form>
+  </div>
+</div>
     <?php
         if(isset($_SESSION["useruid"]))
             {
         ?>
-    <form action="./includes/export-csv.inc.php" method="post">
-        <label for="exp_file">Export-Filename:</label>
+    <div class="card">
+  <div class="card-body">
+    <form method="post">
+      <div class="form-group">
+      <h5 class="text-center">Export-Filename:</h5>
         <input class="form-control" type="text" name="exp_file">
-        
-        <button class="btn btn-primary" type="submit" name="export-csv">CSV-Export</button>
-            
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-csv.inc.php" name="export-csv">CSV-Export</button>
+        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-json.inc.php" name="export-json">JSON-Export</button>
+        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-xml.inc.php" name="export-xml">XML-Export</button>
+      </div>
     </form>
-    <form action="./includes/export-json.inc.php" method="post">
-        <label for="exp_file">Export-Filename:</label>
-        <input class="form-control" type="text" name="exp_file">
-        <button class="btn btn-primary" type="submit" name="export-json">JSON-Export</button>
-    </form>
-    <form action="./includes/export-xml.inc.php" method="post">
-        <label for="exp_file">Export-Filename:</label>
-        <input class="form-control" type="text" name="exp_file">
-        <button class="btn btn-primary" type="submit" name="export-xml">XML-Export</button>    
-    </form>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
     <form action="./includes/delete_record.inc.php" method="post">
-        <label for="device_id">Delete Network Device:</label>
+      <div class="form-group">
+      <h5 class="text-center">Delete Network Device:</h5>
         <input class="form-control" type="text" name="device_id">
+      </div>
+
+      <div class="text-center">
         <button class="btn btn-primary" type="submit" name="submit">Delete Network Device</button>
+      </div>
     </form>
+  </div>
+</div>
     <?php
         }
     ?>
