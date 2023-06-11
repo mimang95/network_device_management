@@ -15,27 +15,37 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-body-tertiary">
-            <span class="navbar-brand mb-0 h1">Network Device Management</span>
-            <ul>
-                <?php
-                    if(isset($_SESSION["useruid"]))
-                    {
-                ?>
-                <li><a href="#"><?php echo $_SESSION["useruid"];?></a></li>
-                <li><a href="includes/logout.inc.php" class="header-login-a">LOGOUT</a></li>
-            <?php
-                    }
-                    else
-                    {
-                ?>
-                    <li><a href="#">SIGN UP</a></li>
-                    <li><a href="#" class="header-login-a">LOGIN</a></li>
-                <?php    
-                    }
-                ?>
-            </ul>
-        </nav>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Network Device Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <?php
+      if (isset($_SESSION["useruid"])) {
+        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><?php echo $_SESSION["useruid"];?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="includes/logout.inc.php">LOGOUT</a>
+        </li>
+        <?php
+      } else {
+        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#">SIGN UP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" class="header-login-a">LOGIN</a>
+        </li>
+        <?php
+      }
+      ?>
+    </ul>
+  </div>
+</nav>
     </header>
     <div class="row">
     <div class="col-md-6">
