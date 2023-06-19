@@ -217,6 +217,20 @@
     </form>
   </div>
 </div>
+<div class="card">
+  <div class="card-body">
+    <form action="./includes/delete_user.inc.php" method="post">
+      <div class="form-group">
+      <h5 class="text-center">Delete User:</h5>
+        <input class="form-control" type="text" name="delete_user">
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit" name="submit">Delete User</button>
+      </div>
+    </form>
+  </div>
+</div>
     <?php
         }
     ?>

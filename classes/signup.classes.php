@@ -30,4 +30,17 @@ class Signup extends Dbh{
         }
         return $resultCheck;
     }
+
+    public function deleteUser($uid) {
+        $stmt = $this->connect()->prepare('DELETE FROM users WHERE users_uid = ?;');
+        
+        if (!$stmt->execute(array($uid))) {
+            $stmt = null;
+            header("location: ../index.php?error=stmtfailed");
+            exit();
+        }
+        $stmt = null;
+    }
+
+    
 }
