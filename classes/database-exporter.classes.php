@@ -7,7 +7,7 @@ class DatabaseExporter extends Dbh
         try {
             $pdo = $this->connect();
 
-            // SQL-Abfrage zum Abrufen der Daten
+            // SQL-Request to fetch all data
             $sql = "SELECT device_id, device_type, ip_address, MAC_address, network_device.network_address, subnet_mask, default_gateway 
             FROM network_device 
             INNER JOIN vlan 
@@ -16,14 +16,14 @@ class DatabaseExporter extends Dbh
             $stmt = $pdo->query($sql);
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // CSV-Datei erstellen und Daten schreiben
+            // Create CSV-file and write data.
             $file = fopen($csvFile, 'w');
 
-            // Spaltenüberschriften schreiben
+            // write column names
             $header = array_keys($data[0]);
             fputcsv($file, $header);
 
-            // Daten schreiben
+            // write data
             foreach ($data as $row) {
                 fputcsv($file, $row);
             }
@@ -41,7 +41,7 @@ class DatabaseExporter extends Dbh
         try {
             $pdo = $this->connect();
 
-            // SQL-Abfrage zum Abrufen der Daten
+            // SQL-Request to fetch all data
             $sql = "SELECT device_id, device_type, ip_address, MAC_address, network_device.network_address, subnet_mask, default_gateway 
             FROM network_device 
             INNER JOIN vlan 
@@ -50,7 +50,7 @@ class DatabaseExporter extends Dbh
             $stmt = $pdo->query($sql);
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // JSON-Datei erstellen und Daten schreiben
+            // Create JSON-File and write data.
             $json = json_encode($data, JSON_PRETTY_PRINT);
 
             file_put_contents($jsonFile, $json);
@@ -67,7 +67,7 @@ class DatabaseExporter extends Dbh
         try {
             $pdo = $this->connect();
 
-            // SQL-Abfrage zum Abrufen der Daten
+            // SQL-Request to fetch all data
             $sql = "SELECT device_id, device_type, ip_address, MAC_address, network_device.network_address, subnet_mask, default_gateway 
             FROM network_device 
             INNER JOIN vlan 
@@ -76,7 +76,7 @@ class DatabaseExporter extends Dbh
             $stmt = $pdo->query($sql);
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // XML-Datei erstellen und Daten schreiben
+            // Create XML-file and write data.
             $xml = new SimpleXMLElement('<data/>');
 
             foreach ($data as $row) {
