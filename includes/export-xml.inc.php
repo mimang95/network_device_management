@@ -1,6 +1,6 @@
 <?php
 require '../classes/database-exporter.classes.php';
-// Beispielverwendung
+
 $exporter = new DatabaseExporter();
 $exporter->connect();
 
