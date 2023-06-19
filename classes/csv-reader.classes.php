@@ -19,8 +19,15 @@ class CSVReader {
         
         // Open the CSV file for reading
         if (($handle = fopen("../csv-files/".$this->filename, 'r')) !== false) {
+            $isFirstRow = true; // Variable to track the first row
+            
             // Read each row of the CSV file
             while (($data = fgetcsv($handle, 0, $this->delimiter)) !== false) {
+                 // Skip the first row
+            if ($isFirstRow) {
+                $isFirstRow = false;
+                continue;
+            }
                 // Store the row data in an array
                 $rows[] = $data;
             }

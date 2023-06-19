@@ -48,10 +48,10 @@ class Dbh {
         $stmt = $this->connect()->prepare("INSERT INTO network_device (device_type, ip_address, MAC_address, network_address) VALUES (:device_type, :ip_address, :MAC_address, :network_address)"); // Preparing a SQL statement for inserting values into the 'network_device' table
 
         foreach ($data as $row) {
-            $stmt->bindParam(':device_type', $row[0]); // Binding the 'device_type' parameter from the CSV data row
-            $stmt->bindParam(':ip_address', $row[1]); // Binding the 'ip_address' parameter from the CSV data row
-            $stmt->bindParam(':MAC_address', $row[2]); // Binding the 'MAC_address' parameter from the CSV data row
-            $stmt->bindParam(':network_address', $row[3]); // Binding the 'network_address' parameter from the CSV data row
+            $stmt->bindParam(':device_type', $row[1]); // Binding the 'device_type' parameter from the CSV data row
+            $stmt->bindParam(':ip_address', $row[2]); // Binding the 'ip_address' parameter from the CSV data row
+            $stmt->bindParam(':MAC_address', $row[3]); // Binding the 'MAC_address' parameter from the CSV data row
+            $stmt->bindParam(':network_address', $row[4]); // Binding the 'network_address' parameter from the CSV data row
             $stmt->execute(); // Executing the SQL statement for each row of data in the CSV
         }
     }
