@@ -1,0 +1,1 @@
+Wir verwenden das CSS-framework bootstrap, um uns die Arbeit beim Styling etwas zu erleichtern.

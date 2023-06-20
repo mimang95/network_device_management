@@ -1,4 +1,5 @@
 <?php
+// file to handle inserting a new vlan in the database
 include('../classes/dbh.classes.php');
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $network_address = $_POST['network_address'];

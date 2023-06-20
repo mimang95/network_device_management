@@ -23,7 +23,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <?php
-      if (isset($_SESSION["useruid"])) {
+      if (isset($_SESSION["useruid"])) { //only display the following, if the user is logged in
         ?>
         <li class="nav-item">
           <a class="nav-link" href="#"><?php echo $_SESSION["useruid"];?></a>
