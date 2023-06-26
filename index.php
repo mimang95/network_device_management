@@ -79,62 +79,62 @@
         if(isset($_SESSION["useruid"]))
         {
     ?>
-    <div class="row">
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Add network device</h3>
-                <form action="includes/submit-network-device.inc.php" method="post">
-                    <div class="mb-3">
-                        <label for="device_type" class="form-label">Device Type</label>
-                        <select class="form-select" name="device_type" id="device_type">
-                            <option value="notebook">Notebook</option>
-                            <option value="PC">PC</option>
-                            <option value="router">Router</option>
-                            <option value="switch">Switch</option>
-                            <option value="iot_device">IoT-Device</option>
-                            <option value="printer">Printer</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="ip_address" class="form-label">IP Address</label>
-                        <input class="form-control" type="text" name="ip_address" placeholder="IP Address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="mac_address" class="form-label">MAC Address</label>
-                        <input class="form-control" type="text" name="mac_address" placeholder="MAC Address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="network_address" class="form-label">Network Address</label>
-                        <input class="form-control" type="text" name="network_address" placeholder="Network Address">
-                    </div>
-                    <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Add VLAN</h3>
-                <form action="includes/submit-vlan.inc.php" method="post">
-                    <div class="mb-3">
-                        <label for="network_address" class="form-label">Network Address</label>
-                        <input class="form-control" type="text" name="network_address" placeholder="Network Address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="subnet_mask" class="form-label">Subnet Mask</label>
-                        <input class="form-control" type="text" name="subnet_mask" placeholder="Subnet Mask">
-                    </div>
-                    <div class="mb-3">
-                        <label for="default_gateway" class="form-label">Default Gateway</label>
-                        <input class="form-control" type="text" name="default_gateway" placeholder="Default Gateway">
-                    </div>
-                    <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-md-6">
+      <div class="card">
+          <div class="card-body">
+              <h3 class="card-title">Add network device</h3>
+              <form action="includes/submit-network-device.inc.php" method="post">
+                  <div class="mb-3">
+                      <label for="device_type" class="form-label">Device Type</label>
+                      <select class="form-select" name="device_type" id="device_type">
+                          <option value="notebook">Notebook</option>
+                          <option value="PC">PC</option>
+                          <option value="router">Router</option>
+                          <option value="switch">Switch</option>
+                          <option value="iot_device">IoT-Device</option>
+                          <option value="printer">Printer</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="ip_address" class="form-label">IP Address</label>
+                      <input class="form-control" type="text" name="ip_address" placeholder="IP Address">
+                  </div>
+                  <div class="mb-3">
+                      <label for="mac_address" class="form-label">MAC Address</label>
+                      <input class="form-control" type="text" name="mac_address" placeholder="MAC Address">
+                  </div>
+                  <div class="mb-3">
+                      <label for="network_address" class="form-label">Network Address</label>
+                      <input class="form-control" type="text" name="network_address" placeholder="Network Address">
+                  </div>
+                  <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6">
+      <div class="card">
+          <div class="card-body">
+              <h3 class="card-title">Add VLAN</h3>
+              <form action="includes/submit-vlan.inc.php" method="post">
+                  <div class="mb-3">
+                      <label for="network_address" class="form-label">Network Address</label>
+                      <input class="form-control" type="text" name="network_address" placeholder="Network Address">
+                  </div>
+                  <div class="mb-3">
+                      <label for="subnet_mask" class="form-label">Subnet Mask</label>
+                      <input class="form-control" type="text" name="subnet_mask" placeholder="Subnet Mask">
+                  </div>
+                  <div class="mb-3">
+                      <label for="default_gateway" class="form-label">Default Gateway</label>
+                      <input class="form-control" type="text" name="default_gateway" placeholder="Default Gateway">
+                  </div>
+                  <button class="btn btn-primary" type="submit" name="submit">SUBMIT</button>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>
 <br>
     <?php
@@ -169,66 +169,67 @@
         }
         ?>
     </table>
-    <div class="card">
-  <div class="card-body">
-    <form action="./includes/process.inc.php" method="post">
-      <div class="form-group">
-      <h5 class="text-center">Import-Filename:</h5>
-        <input class="form-control" type="text" name="filename" id="filename" required>
-      </div>
-
-      <div class="text-center">
-        <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
-      </div>
-    </form>
+<div class="row">
+  <div class="card col-md-6">
+    <div class="card-body">
+      <form action="./includes/process.inc.php" method="post">
+        <div class="form-group">
+        <h5 class="text-center">Import-Filename:</h5>
+          <input class="form-control" type="text" name="filename" id="filename" required>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary" type="submit">CSV-Datei einlesen</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-    <?php
-        if(isset($_SESSION["useruid"]))
-            {
-        ?>
-    <div class="card">
-  <div class="card-body">
-    <form method="post">
-      <div class="form-group">
-      <h5 class="text-center">Export-Filename:</h5>
-        <input class="form-control" type="text" name="exp_file">
-      </div>
+      <?php
+          if(isset($_SESSION["useruid"]))
+              {
+          ?>
+      <div class="card col-md-6">
+    <div class="card-body">
+      <form method="post">
+        <div class="form-group">
+        <h5 class="text-center">Export-Filename:</h5>
+          <input class="form-control" type="text" name="exp_file">
+        </div>
 
-      <div class="text-center">
-        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-csv.inc.php" name="export-csv">CSV-Export</button>
-        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-json.inc.php" name="export-json">JSON-Export</button>
-        <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-xml.inc.php" name="export-xml">XML-Export</button>
-      </div>
-    </form>
+        <div class="text-center">
+          <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-csv.inc.php" name="export-csv">CSV-Export</button>
+          <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-json.inc.php" name="export-json">JSON-Export</button>
+          <button class="btn btn-primary mx-2" type="submit" formaction="./includes/export-xml.inc.php" name="export-xml">XML-Export</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <form action="./includes/delete_record.inc.php" method="post">
-      <div class="form-group">
-      <h5 class="text-center">Delete Network Device:</h5>
-        <input class="form-control" type="text" name="device_id">
-      </div>
+  <div class="card col-md-6">
+    <div class="card-body">
+      <form action="./includes/delete_record.inc.php" method="post">
+        <div class="form-group">
+        <h5 class="text-center">Delete Network Device:</h5>
+          <input class="form-control" type="text" name="device_id">
+        </div>
 
-      <div class="text-center">
-        <button class="btn btn-primary" type="submit" name="submit">Delete Network Device</button>
-      </div>
-    </form>
+        <div class="text-center">
+          <button class="btn btn-primary" type="submit" name="submit">Delete Network Device</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <form action="./includes/delete_user.inc.php" method="post">
-      <div class="form-group">
-      <h5 class="text-center">Delete User:</h5>
-        <input class="form-control" type="text" name="delete_user">
-      </div>
+  <div class="card col-md-6">
+    <div class="card-body">
+      <form action="./includes/delete_user.inc.php" method="post">
+        <div class="form-group">
+        <h5 class="text-center">Delete User:</h5>
+          <input class="form-control" type="text" name="delete_user">
+        </div>
 
-      <div class="text-center">
-        <button class="btn btn-primary" type="submit" name="submit">Delete User</button>
-      </div>
-    </form>
+        <div class="text-center">
+          <button class="btn btn-primary" type="submit" name="submit">Delete User</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
     <?php
