@@ -1,5 +1,5 @@
 <?php
-//Manages Database connection and 
+// responsible for interacting with the database
 class Dbh {
     // Method to establish a database connection
     public function connect(){
