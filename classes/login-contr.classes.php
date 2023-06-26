@@ -1,4 +1,5 @@
 <?php
+// responsible for the login of users
 class LoginContr extends Login {
     private $uid;
     private $pwd;

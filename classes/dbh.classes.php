@@ -1,12 +1,12 @@
 <?php
-
+//Manages Database connection and 
 class Dbh {
     // Method to establish a database connection
     public function connect(){
         try {
             $username = "root"; // Username for the database
             $password = ""; // Password for the database
-            $dbh = new PDO('mysql:host=localhost;dbname=network_device_management', $username, $password); // Creating a new PDO instance for connecting to the database
+            $dbh = new PDO('mysql:host=localhost;dbname=network_device_management', $username, $password); // Creating a new PDO instance for connecting to the database via an object oriented API
             return $dbh; // Returning the PDO instance
         }
         catch (PDOException $e) {

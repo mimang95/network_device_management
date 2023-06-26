@@ -1,4 +1,5 @@
 <?php
+// contains different methods to control the user input
 class SignupContr extends Signup{
     private $uid;
     private $pwd;

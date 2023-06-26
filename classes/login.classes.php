@@ -1,6 +1,6 @@
 <?php
 
-// File for interacting with the database
+// responsible for interacting with the database in relation to the login process.
 class Login extends Dbh {
     
     // Method to retrieve user information from the database based on user ID and password
