@@ -18,4 +18,3 @@ if (isset($_POST['export-xml'])) {
 
 // Call the exportToXML method of the DatabaseExporter class with a default file name 'export.xml'
 $exporter->exportToXML('export.xml');
-?>

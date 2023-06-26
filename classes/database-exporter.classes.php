@@ -95,4 +95,3 @@ class DatabaseExporter extends Dbh
         }
     }
 }
-

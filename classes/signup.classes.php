@@ -1,10 +1,12 @@
 <?php
 
 // File for interaction with the database
-class Signup extends Dbh {
+class Signup extends Dbh
+{
 
     // Method for setting user data in the database
-    protected function setUser($uid, $pwd, $email) {
+    protected function setUser($uid, $pwd, $email)
+    {
         $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?, ?, ?);');
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); // Hash the password for security
 
@@ -17,7 +19,8 @@ class Signup extends Dbh {
     }
 
     // Method for checking if a user already exists in the database
-    protected function checkUser($uid, $email) {
+    protected function checkUser($uid, $email)
+    {
         $stmt = $this->connect()->prepare('SELECT users_uid FROM users WHERE users_uid = ? OR users_email = ?;');
         if (!$stmt->execute(array($uid, $email))) { // Execute the prepared statement with user ID and email
             $stmt = null;
@@ -34,9 +37,10 @@ class Signup extends Dbh {
     }
 
     // Method for deleting a user from the database
-    public function deleteUser($uid) {
+    public function deleteUser($uid)
+    {
         $stmt = $this->connect()->prepare('DELETE FROM users WHERE users_uid = ?;');
-        
+
         if (!$stmt->execute(array($uid))) { // Execute the prepared statement with user ID
             $stmt = null;
             header("location: ../index.php?error=stmtfailed"); // Redirect to index.php with an error message

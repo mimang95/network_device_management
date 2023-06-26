@@ -19,4 +19,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Fehler beim Einlesen der CSV-Datei."; // Output an error message if there was an issue reading the CSV file
     }
 }
-?>

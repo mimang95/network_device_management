@@ -18,4 +18,3 @@ if (isset($_POST['export-csv'])) {
 
 // Call the exportToCSV method of the DatabaseExporter class with a default file name 'export.csv'
 $exporter->exportToCSV('export.csv');
-?>
