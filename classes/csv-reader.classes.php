@@ -1,5 +1,5 @@
 <?php
-
+// class responsible for reading a csv file and storing it into the database
 class CSVReader {
     private $filename;
     private $delimiter;
